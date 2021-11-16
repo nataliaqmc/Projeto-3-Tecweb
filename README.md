@@ -1,2 +1,6 @@
 # Projeto 3 - Tecweb 2021.2:
-#### Natália Queiroz Menezes Carreras
+#### Integrantes:
+  - Carolina Hirschheimer
+  - Natália Queiroz Menezes Carreras
+
+#### Link API: https://rapidapi.com/brianiswu/api/genius/
