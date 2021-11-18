@@ -8,6 +8,21 @@ from .serializers import MusicSerializer
 def index(request):
     return HttpResponse("Olá mundo! Este é o app notes de Tecnologias Web do Insper.")
 
+# Getting music by id:
+@api_view(['GET', 'POST'])
+def api_music(request,music_title,music_artist, music_thumbnail):
+    if request.method == 'POST':
+        try:
+            Music.objects.get(title=music_title, artist_names=music_artist)
+        except:
+            Music.objects.create(title=music_title, artist_names=music_artist, header_image_thumbnail_url=music_thumbnail)
+    music = Music.objects
+    music.song = music_title
+    music.artist = music_artist
+    music.thumbnail = music_thumbnail
+    serialized_music = MusicSerializer(Music.objects)
+    return Response(serialized_music.data)
+
 
 # Getting full playlist:
 @api_view(['GET', 'POST'])

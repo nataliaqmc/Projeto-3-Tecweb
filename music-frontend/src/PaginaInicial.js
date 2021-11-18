@@ -88,7 +88,7 @@ function PaginaInicial() {
       </div>
       <div className="App">
         {artistSongs.map((songs)=>(
-          <Music full_title={songs.full_title} >{artistSongs}</Music>
+          <Music title={songs.title} artist_names={songs.artist_names} header_image_thumbnail_url={songs.header_image_thumbnail_url}>{artistSongs} </Music>
         ))}
       </div>
     </div>
