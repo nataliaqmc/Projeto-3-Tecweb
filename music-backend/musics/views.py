@@ -13,9 +13,9 @@ def index(request):
 def api_music(request,music_title,music_artist, music_thumbnail):
     if request.method == 'POST':
         try:
-            Music.objects.get(title=music_title, artist_names=music_artist)
+            Music.objects.get(song=music_title, artist=music_artist)
         except:
-            Music.objects.create(title=music_title, artist_names=music_artist, header_image_thumbnail_url=music_thumbnail)
+            Music.objects.create(song=music_title, artist=music_artist, thumbnail=music_thumbnail)
     music = Music.objects
     music.song = music_title
     music.artist = music_artist

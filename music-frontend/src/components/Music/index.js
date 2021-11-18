@@ -7,7 +7,7 @@ function addToPlaylist (song, artist, thumbnail) {
   var axios = require("axios").default;
   const favoritar = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:8000/playlist/'+song+'/'+artist+'/'+thumbnail+'/', {'song':song, 'artist':artist, 'thumbnail':thumbnail})
+    axios.post('http://localhost:8000/playlist/'+song+'/'+artist+'/'+thumbnail+'/', {'title':song, 'artist':artist, 'thumbnail':thumbnail})
   }
   return favoritar
 }
@@ -15,10 +15,10 @@ function addToPlaylist (song, artist, thumbnail) {
 export default function Music(props) {
   return (
     <div className="card">
+      <img onClick={addToPlaylist(props.title, props.artist_names, "url")} className="add-button" src="/plus.png" width='50rem'/>
       <p className="card-title">{props.title}</p>
       <p className="card-artist">{props.artist_names}</p>
-      <p className="card-thumbnail">{props.header_image_thumbnail_url}</p>
-      <img onClick={addToPlaylist(props.title, props.artist_names, "url")} className="add-button" src="/plus.png"/>
+      <img src={props.header_image_thumbnail_url} width="200rem" />
     </div>
   );
 }

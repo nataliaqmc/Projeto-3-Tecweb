@@ -1,4 +1,4 @@
-import Music from "./components/Music";
+import MusicPlaylist from "./components/Music/playlist";
 import { useEffect, useState } from "react";
 import React from "react";
 import {Link} from "react-router-dom"
@@ -18,6 +18,12 @@ function PaginaPlaylist() {
           <Link to="/" className="links">
             <div>Music</div>
           </Link>
+          
+      </div>
+      <div className="App">
+        {playlist.map((songs)=>(
+          <MusicPlaylist song={songs.song} artist={songs.artist} thumbnail={songs.thumbnail}>{playlist} </MusicPlaylist>
+        ))}
       </div>
     </div>
   );
