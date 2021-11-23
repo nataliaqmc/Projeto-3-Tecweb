@@ -9,7 +9,7 @@ export default function Music(props) {
     var axios = require("axios").default;
     const favoritar = (event) => {
       event.preventDefault();
-      axios.post('http://localhost:8000/playlist/'+props.title+'/'+props.artist+'/'+'url'+'/', {'title':props.title, 'artist':props.artist, 'thumbnail':props.header_image_thumbnail_url})
+      axios.post('http://localhost:8000/playlist/'+props.title+'/'+props.artist_names+'/'+'url'+'/', {'title':props.title, 'artist':props.artist_names, 'thumbnail':props.header_image_thumbnail_url})
     }
     return favoritar
   }
