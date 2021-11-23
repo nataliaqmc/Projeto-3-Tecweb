@@ -31,3 +31,12 @@ def api_playlist(request):
         playlist = Music.objects
         serialized_playlist = MusicSerializer(playlist, many=True)
         return Response(serialized_playlist.data)
+
+def api_delete(request,music_title,music_artist):
+    if request.method == 'DELETE':
+        music = Music.objects.get(song=music_title, artist=music_artist)
+        id = music.id
+        playlist = Music.objects
+        playlist.filter(id=id).delete()
+        serialized_playlist = MusicSerializer(Music.objects, many=True)
+        return Response(serialized_playlist.data)
