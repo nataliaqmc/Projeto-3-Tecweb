@@ -1,6 +1,5 @@
 import React from "react";
 import "./index.css";
-import { useEffect, useState } from "react";
 
 
 function addToPlaylist (song, artist, thumbnail) {

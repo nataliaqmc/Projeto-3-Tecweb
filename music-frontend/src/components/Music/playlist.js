@@ -1,17 +1,15 @@
 import React from "react";
 import "./index.css";
-import { useEffect, useState } from "react";
-
 
 export default function MusicPlaylist(props) {
 
   function deleteFromPlaylist () {
     var axios = require("axios").default;
-    const favoritar = (event) => {
+    const deletar = (event) => {
       event.preventDefault();
-      axios.delete('http://localhost:8000/playlist/delete/'+props.song+"/"+props.artist+"/", {'song':props.title, 'artist':props.artist_names, 'thumbnail':props.header_image_thumbnail_url})
+      axios.delete('http://127.0.0.1:8000/playlist/delete/'+props.song+"/"+props.artist+"/", {'song':props.title, 'artist':props.artist_names, 'thumbnail':props.header_image_thumbnail_url})
     }
-    return favoritar
+    return deletar
   }
 
   return (

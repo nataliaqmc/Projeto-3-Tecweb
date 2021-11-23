@@ -9,12 +9,13 @@ function PaginaInicial() {
   const [musics, setMusics] = useState([]);
   const [artistSongs, setArtistSongs] = useState([]);
   const [search, setSearch] = useState([]);
+  const [param, setParam] = useState([]);
 
   // Requisição busca por nome do artista:
   var searchArtist = {
     method: 'GET',
     url: 'https://genius.p.rapidapi.com/search',
-    params: {q: 'Miley Cyrus'},
+    params: {q: 'Anitta'},
     headers: {
       'x-rapidapi-host': 'genius.p.rapidapi.com',
       'x-rapidapi-key': 'e9a145f218msh1c9665147f78266p12c595jsn9c56042d252a'
@@ -64,7 +65,7 @@ function PaginaInicial() {
   // Requisição músicas do artista:
   var songs_by_artist_id = {
     method: 'GET',
-    url: 'https://genius.p.rapidapi.com/artists/16775/songs',
+    url: 'https://genius.p.rapidapi.com/artists/1724859/songs',
     headers: {
       'x-rapidapi-host': 'genius.p.rapidapi.com',
       'x-rapidapi-key': 'e9a145f218msh1c9665147f78266p12c595jsn9c56042d252a'
@@ -85,6 +86,10 @@ function PaginaInicial() {
           <Link to="/playlist" className="links">
             <div>Playlist</div>
           </Link>
+      </div>
+      <div>
+        <input type="text" name="busca" placeholder="Type artist's name" value={setParam}></input>
+        <button>Search</button>
       </div>
       <div className="App">
         {artistSongs.map((songs)=>(
