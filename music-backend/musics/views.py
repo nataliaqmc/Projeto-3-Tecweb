@@ -4,6 +4,8 @@ from rest_framework.response import Response
 from django.http import Http404
 from .models import Music
 from .serializers import MusicSerializer
+from django.shortcuts import redirect
+
 
 def index(request):
     return HttpResponse("Olá mundo! Este é o app notes de Tecnologias Web do Insper.")
@@ -41,4 +43,4 @@ def api_delete(request,music_title,music_artist):
         playlist = Music.objects
         playlist.filter(id=id).delete()
         serialized_playlist = MusicSerializer(Music.objects, many=True)
-        return Response(serialized_playlist.data)
+        return redirect('index')

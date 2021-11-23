@@ -2,7 +2,9 @@ import React from "react";
 import "./index.css";
 
 export default function MusicPlaylist(props) {
-
+  function refreshPage(){ 
+    window.location.reload(); 
+}
   function deleteFromPlaylist () {
     var axios = require("axios").default;
     const deletar = (event) => {
@@ -14,7 +16,7 @@ export default function MusicPlaylist(props) {
 
   return (
     <div className="card">
-      <img onClick={deleteFromPlaylist()} className="delete-button" src="/x.png" width='20rem'/>
+      <img onClick={deleteFromPlaylist()} onClickCapture={refreshPage} className="delete-button" src="/x.png" width='20rem'/>
       <p className="card-title">{props.song}</p>
       <p className="card-artist">{props.artist}</p>
       <img src={props.thumbnail} width="200rem" />
