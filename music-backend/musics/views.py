@@ -15,7 +15,7 @@ def api_music(request,music_title,music_artist, music_thumbnail):
         try:
             Music.objects.get(song=music_title, artist=music_artist)
         except:
-            Music.objects.create(song=music_title, artist=music_artist, thumbnail=music_thumbnail)
+            Music.objects.create(song=music_title, artist=music_artist)
     music = Music.objects
     music.song = music_title
     music.artist = music_artist

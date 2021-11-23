@@ -15,7 +15,7 @@ function PaginaInicial() {
   var searchArtist = {
     method: 'GET',
     url: 'https://genius.p.rapidapi.com/search',
-    params: {q: 'Anitta'},
+    params: {q: 'Taylor Swift'},
     headers: {
       'x-rapidapi-host': 'genius.p.rapidapi.com',
       'x-rapidapi-key': 'e9a145f218msh1c9665147f78266p12c595jsn9c56042d252a'
@@ -65,7 +65,7 @@ function PaginaInicial() {
   // Requisição músicas do artista:
   var songs_by_artist_id = {
     method: 'GET',
-    url: 'https://genius.p.rapidapi.com/artists/1724859/songs',
+    url: 'https://genius.p.rapidapi.com/artists/16775/songs',
     headers: {
       'x-rapidapi-host': 'genius.p.rapidapi.com',
       'x-rapidapi-key': 'e9a145f218msh1c9665147f78266p12c595jsn9c56042d252a'
@@ -82,9 +82,9 @@ function PaginaInicial() {
   return (
     <div>
       <div className="App-header">
-          <div>Music</div>
+          <div class="title">Music</div>
           <Link to="/playlist" className="links">
-            <div>Playlist</div>
+            <div class="playlist">Playlist</div>
           </Link>
       </div>
       <div>

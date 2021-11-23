@@ -22,9 +22,9 @@
   background-color: #282c34;
   height: 3rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -45,4 +45,11 @@
 .links {
   color: white;
   text-decoration: none;
+}
+.title {
+  margin-left: 50%;
+}
+.playlist {
+  margin-right: 1rem;
+  font-size: small;
 }

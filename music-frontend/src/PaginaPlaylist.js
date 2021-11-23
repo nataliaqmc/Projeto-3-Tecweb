@@ -15,8 +15,9 @@ function PaginaPlaylist() {
   return (
     <div>
       <div className="App-header">
+        <div class="title">Music</div>
           <Link to="/" className="links">
-            <div>Music</div>
+            <img src="/seta.png" width='60rem'/>
           </Link>
           
       </div>

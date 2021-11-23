@@ -14,7 +14,7 @@ export default function MusicPlaylist(props) {
 
   return (
     <div className="card">
-      <button onClick={deleteFromPlaylist} className="delete-button"> X </button>
+      <img onClick={deleteFromPlaylist()} className="delete-button" src="/x.png" width='20rem'/>
       <p className="card-title">{props.song}</p>
       <p className="card-artist">{props.artist}</p>
       <img src={props.thumbnail} width="200rem" />

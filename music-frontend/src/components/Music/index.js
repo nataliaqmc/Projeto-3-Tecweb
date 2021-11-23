@@ -2,22 +2,36 @@ import React from "react";
 import "./index.css";
 
 
-function addToPlaylist (song, artist, thumbnail) {
-  var axios = require("axios").default;
-  const favoritar = (event) => {
-    event.preventDefault();
-    axios.post('http://localhost:8000/playlist/'+song+'/'+artist+'/'+thumbnail+'/', {'title':song, 'artist':artist, 'thumbnail':thumbnail})
-  }
-  return favoritar
-}
+
 
 export default function Music(props) {
+  function addToPlaylist () {
+    var axios = require("axios").default;
+    const favoritar = (event) => {
+      event.preventDefault();
+      axios.post('http://localhost:8000/playlist/'+props.title+'/'+props.artist+'/'+'url'+'/', {'title':props.title, 'artist':props.artist, 'thumbnail':props.header_image_thumbnail_url})
+    }
+    return favoritar
+  }
   return (
     <div className="card">
-      <img onClick={addToPlaylist(props.title, props.artist_names, "url")} className="add-button" src="/plus.png" width='50rem'/>
-      <p className="card-title">{props.title}</p>
-      <p className="card-artist">{props.artist_names}</p>
-      <img src={props.header_image_thumbnail_url} width="200rem" />
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src={props.header_image_thumbnail_url} height="200rem" max_width="200rem"/>
+          </div>
+          <div class="flip-card-back">
+            <div class="plus">
+              <img onClick={addToPlaylist()} className="add-button" src="/plus.png" width='30rem'/>
+            </div>
+            <p className="card-title">{props.title}</p>
+            <p className="card-content">{props.artist_names}</p>
+          </div>
+        </div>
+      </div>
+      
+      
+      
     </div>
   );
 }
