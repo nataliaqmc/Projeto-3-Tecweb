@@ -33,13 +33,13 @@ function PaginaSearch() {
   return (
     <div>
       <div className="App-header">
-          <div class="title">Music</div>
-          <Link to="/playlist" className="links">
-            <div class="playlist">Playlist</div>
-          </Link>
-          <Link to="/artist" className="links">
-            <div class="playlist">+ informações</div>
-          </Link>
+        <Link to="/" className="links">
+          <img src="/house.png" width='35rem'/>
+        </Link>
+        <div class="title">Music</div>
+        <Link to="/playlist" className="links">
+          <div class="playlist">Playlist</div>
+        </Link>
       </div>
       <div>
       <form className="form-card" onSubmit={SearchArtist}>

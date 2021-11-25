@@ -62,13 +62,13 @@ function PaginaInicial() {
   return (
     <div>
       <div className="App-header">
-          <div class="title">Music</div>
-          <Link to="/playlist" className="links">
-            <div class="playlist">Playlist</div>
-          </Link>
-          <Link to="/search" className="links">
-            <div class="playlist">Search</div>
-          </Link>
+        <Link to="/search" className="links">
+          <img src="/search.png" width='30rem'/>
+        </Link>
+        <div class="title">Music</div>
+        <Link to="/playlist" className="links">
+          <div class="playlist">Playlist</div>
+        </Link>
       </div>
       <div className="App">
         {artistSongs.map((songs)=>(
