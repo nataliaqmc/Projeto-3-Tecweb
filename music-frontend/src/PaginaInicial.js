@@ -88,7 +88,7 @@ function PaginaInicial() {
           </Link>
       </div>
       <div>
-        <input type="text" name="busca" placeholder="Type artist's name" value={setParam}></input>
+        <input type="text" name="busca" placeholder="Type artist's name" ></input>
         <button>Search</button>
       </div>
       <div className="App">
