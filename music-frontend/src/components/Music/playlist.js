@@ -16,13 +16,19 @@ export default function MusicPlaylist(props) {
 
   return (
     <div className="card">
-      <div className="x">
-        <img onClick={deleteFromPlaylist()} onClickCapture={refreshPage} className="delete-button" src="/x.png" width='20rem'/>
-      </div>
-      <div className="card-content">
-        <p className="card-title">{props.song}</p>
-        <p className="card-artist">{props.artist}</p>
-        <img src={props.thumbnail} width="200rem" />
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src={props.thumbnail} height="100%" width="100%" />
+          </div>
+          <div class="flip-card-back">
+            <div class="x">
+              <img onClick={deleteFromPlaylist()} onClickCapture={refreshPage} className="delete-button" src="/x.png" width='20rem'/>
+            </div>
+            <p className="card-title">{props.song}</p>
+            <p className="card-content">{props.artist}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

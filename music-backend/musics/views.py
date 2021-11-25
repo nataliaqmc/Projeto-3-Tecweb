@@ -12,10 +12,11 @@ def index(request):
 @api_view(['GET', 'POST'])
 def api_music(request,music_title,music_artist, music_thumbnail):
     if request.method == 'POST':
+        m = 'https://images.genius.com/'+music_thumbnail
         try:
             Music.objects.get(song=music_title, artist=music_artist)
         except:
-            Music.objects.create(song=music_title, artist=music_artist)
+            Music.objects.create(song=music_title, artist=music_artist, thumbnail = m)
     music = Music.objects
     music.song = music_title
     music.artist = music_artist
