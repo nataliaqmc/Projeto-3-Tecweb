@@ -15,12 +15,12 @@ function PaginaPlaylist() {
   return (
     <div>
       <div className="App-header">
-        <Link to="/search" className="links">
-            <img src="/search.png" width='30rem'/>
-          </Link>
+      <Link to="/" className="links">
+          <img src="/house.png" width='35rem'/>
+        </Link>
         <div class="title">Music</div>
-        <Link to="/" className="links">
-          <img src="/seta.png" width='60rem'/>
+        <Link to="/search" className="links">
+          <img src="/search.png" width='30rem'/>
         </Link>
           
       </div>

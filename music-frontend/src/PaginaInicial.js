@@ -26,12 +26,12 @@ function PaginaInicial() {
   return (
     <div>
       <div className="App-header">
-        <Link to="/search" className="links">
-          <img src="/search.png" width='30rem'/>
+        <Link to="/playlist" className="links">
+          <img src="/music.png" width='35rem'/>
         </Link>
         <div class="title">Music</div>
-        <Link to="/playlist" className="links">
-          <div class="playlist">Playlist</div>
+        <Link to="/search" className="links">
+          <img src="/search.png" width='30rem'/>
         </Link>
       </div>
       <div className="App">

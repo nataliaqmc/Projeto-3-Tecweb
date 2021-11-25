@@ -38,7 +38,7 @@ function PaginaSearch() {
         </Link>
         <div class="title">Music</div>
         <Link to="/playlist" className="links">
-          <div class="playlist">Playlist</div>
+          <img src="/music.png" width='35rem'/>
         </Link>
       </div>
       <div>
