@@ -11,24 +11,6 @@ function PaginaInicial() {
   const [search, setSearch] = useState([]);
   const [param, setParam] = useState([]);
 
-  // Requisição busca por nome do artista:
-  var searchArtist = {
-    method: 'GET',
-    url: 'https://genius.p.rapidapi.com/search',
-    params: {q: 'Taylor Swift'},
-    headers: {
-      'x-rapidapi-host': 'genius.p.rapidapi.com',
-      'x-rapidapi-key': 'e9a145f218msh1c9665147f78266p12c595jsn9c56042d252a'
-    }
-  };
-  useEffect(() => {
-    axios
-      .request(searchArtist)
-      .then((res) => setSearch(res.data.response.hits));
-  }, []);
-  console.log(search); // Devolve os hits do artista 
-
-
   // Requisição artista pelo id:
   var artist_by_id = {
     method: 'GET',
@@ -59,7 +41,6 @@ function PaginaInicial() {
       .request(songs_by_id)
       .then((res) => setMusics(res.data.response.song));
   }, []);
-  console.log(musics); // Devolve os hits do artista 
 
 
   // Requisição músicas do artista:
@@ -76,7 +57,6 @@ function PaginaInicial() {
       .request(songs_by_artist_id)
       .then((res) => setArtistSongs(res.data.response.songs));
   }, []);
-  console.log(artistSongs); // Devolve os hits do artista 
   
   
   return (
@@ -86,10 +66,9 @@ function PaginaInicial() {
           <Link to="/playlist" className="links">
             <div class="playlist">Playlist</div>
           </Link>
-      </div>
-      <div>
-        <input type="text" name="busca" placeholder="Type artist's name" ></input>
-        <button>Search</button>
+          <Link to="/search" className="links">
+            <div class="playlist">Search</div>
+          </Link>
       </div>
       <div className="App">
         {artistSongs.map((songs)=>(

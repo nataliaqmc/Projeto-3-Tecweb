@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import React from "react";
 import {Link} from "react-router-dom"
 
-function PaginaSearch() {
+function PaginaArtist() {
   var axios = require("axios").default;
   const [search, setSearch] = useState([]);
+  const [artists, setArtists] = useState([]);
+
   const [artist, setArtist] = useState("");
   const artistChanged = (event) =>{
     setArtist(event.target.value);
@@ -27,7 +29,21 @@ function PaginaSearch() {
 }
   console.log(search); // Devolve os hits do artista 
 
-
+  // Requisição artista pelo id:
+  var artist_by_id = {
+    method: 'GET',
+    url: 'https://genius.p.rapidapi.com/artists/16775',
+    headers: {
+      'x-rapidapi-host': 'genius.p.rapidapi.com',
+      'x-rapidapi-key': 'e9a145f218msh1c9665147f78266p12c595jsn9c56042d252a'
+    }
+  };
+  useEffect(() => {
+    axios
+      .request(artist_by_id)
+      .then((res) => setArtists(res.data.response.artist));
+  }, []);
+  console.log(artists); // Devolve os hits do artista 
   
   
   return (
@@ -36,9 +52,6 @@ function PaginaSearch() {
           <div class="title">Music</div>
           <Link to="/playlist" className="links">
             <div class="playlist">Playlist</div>
-          </Link>
-          <Link to="/artist" className="links">
-            <div class="playlist">+ informações</div>
           </Link>
       </div>
       <div>
@@ -63,4 +76,4 @@ function PaginaSearch() {
   );
 }
 
-export default PaginaSearch;
+export default PaginaArtist;
