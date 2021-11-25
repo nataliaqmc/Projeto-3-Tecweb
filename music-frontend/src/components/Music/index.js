@@ -18,7 +18,7 @@ export default function Music(props) {
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src={props.header_image_thumbnail_url} height="200rem" max_width="200rem"/>
+            <img src={props.header_image_thumbnail_url} height="100%" width="100%" />
           </div>
           <div class="flip-card-back">
             <div class="plus">
